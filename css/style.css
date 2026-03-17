@@ -34,12 +34,18 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 
-    background: rgba(173, 173, 173, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(194, 194, 194, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
 
     border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -48,6 +54,35 @@ a {
     -o-border-radius: 15px;
     animation: slideUpFade 0.6s ease-out;
 }
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
 .glass-card header {
     position: relative;
     padding: 0 10px 20px;
@@ -200,6 +235,39 @@ a {
 }
 .social .github:hover i{
     color:white;
+}
+.glass-card > a {
+    display: block;
+    width: fit-content;
+    background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
+    color: #fcfcfe;
+    font-weight: 700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin: 20px auto;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+    outline: none;
+    font-size: 20px;
+}
+
+.glass-card > a:hover {
+  background-position: right center;
+  color: #fff;
+}
+.glass-card > a:active{ 
+    transform: translateY(3px) scale(0.96);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    -webkit-transform: translateY(3px) scale(0.96);
+    -moz-transform: translateY(3px) scale(0.96);
+    -ms-transform: translateY(3px) scale(0.96);
+    -o-transform: translateY(3px) scale(0.96);
 }
 /* ============================ Animation ================================================= */
 @keyframes slideUpFade {
