@@ -106,7 +106,10 @@ a {
     font-size: 24px;
 }
 .glass-card header h1 span{
-    color: blueviolet;
+    background: linear-gradient(90deg, #00E5FF, #8A2BE2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .glass-card header p {
     font-size: 14px;
@@ -157,7 +160,6 @@ a {
     flex-wrap: wrap;
 }
 .glass-card .social a{
-    background-color: rgba(58, 58, 58, 0.906);
     padding: 8px 10px;
     margin: 10px 5px;
     transition: 0.3s;
@@ -183,29 +185,12 @@ a {
 .glass-card .social a i{
     transition: 0.3s;
 }
-.social .facebook i {
-    color: #1877F2;
-}
-.social .facebook:hover{
-    background:#1877F2;
-}
-.social .facebook:hover i{
+.social .facebook {
+    background-color:#1877F2;
     color:white;
 }
-.social .instagram i {
-    color: #E4405F; background: linear-gradient(
-        45deg,
-        #F58529,
-        #FEDA77,
-        #DD2A7B,
-        #8134AF,
-        #515BD4
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.social .instagram:hover{
+.social .instagram {
+    color: rgb(255, 255, 255);
     background: linear-gradient(
         45deg,
         #F58529,
@@ -215,48 +200,36 @@ a {
         #515BD4
     );
 }
-.social .instagram:hover i{
-    -webkit-text-fill-color: white;
-}
-.social .telegram i{
-    color: #0088CC;
-}
-.social .telegram:hover{
+.social .telegram {
     background:#0088CC;
-}
-.social .telegram:hover i{
     color:white;
 }
-.social .github i{
-    color: #181717;
-}
-.social .github:hover{
+.social .github{
     background:#181717;
-}
-.social .github:hover i{
     color:white;
 }
 .glass-card > a {
+    position: relative;
+    overflow: hidden;
     display: block;
     width: fit-content;
-    background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
     color: #fcfcfe;
     font-weight: 700;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     transition: 0.5s;
-    background-size: 200% auto;
-    box-shadow: 0 0 20px #eee;
-    outline: none;
     font-size: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow:     0 8px 32px rgba(0, 0, 0, 0.1),    inset 0 1px 0 rgba(255, 255, 255, 0.5),    inset 0 -1px 0 rgba(255, 255, 255, 0.1),    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+    
 }
-
 .glass-card > a:hover {
   background-position: right center;
   color: #fff;
@@ -269,6 +242,26 @@ a {
     -ms-transform: translateY(3px) scale(0.96);
     -o-transform: translateY(3px) scale(0.96);
 }
+.runner {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00E5FF, #8A2BE2);
+    filter: blur(1px);
+    offset-path: inset(0 round 10px);
+    offset-rotate: auto;
+    -webkit-filter: blur(1px);
+    animation: move 4s linear infinite;
+    -webkit-animation: move 4s linear infinite;
+    box-shadow: 0 0 3px #00E5FF, 0 0 3px #8A2BE2;
+}
+.runner:first-of-type {
+    animation-delay: 0s;
+}
+.runner:last-of-type {
+    animation-delay: -2s; 
+}
 /* ============================ Animation ================================================= */
 @keyframes slideUpFade {
     from{
@@ -278,5 +271,14 @@ a {
     to{
         transform: translateY(0);
         opacity: 1;
+    }
+}
+/* الحركة */
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
     }
 }
