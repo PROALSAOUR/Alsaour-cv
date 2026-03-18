@@ -245,16 +245,15 @@ a {
 .runner {
     position: absolute;
     width: 50px;
-    height: 2px;
+    height: 4px;
     border-radius: 10px;
-    background: linear-gradient(90deg, #00E5FF, #8A2BE2);
-    filter: blur(1px);
+    background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%);
     offset-path: inset(0 round 10px);
     offset-rotate: auto;
+    filter: blur(1px);
     -webkit-filter: blur(1px);
     animation: move 4s linear infinite;
     -webkit-animation: move 4s linear infinite;
-    box-shadow: 0 0 3px #00E5FF, 0 0 3px #8A2BE2;
 }
 .runner:first-of-type {
     animation-delay: 0s;
