@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Saour</title>
 
+    <!-- تنسيقات ميتا -->
+    <meta property="og:title" content="Mahmoud Alsaour Portfolio">
+    <meta property="og:description" content="Web developer & programmer. Always learning, always building. 🚀">
+    <meta property="og:url" content="https://alsaour.vercel.app">
+    <meta property="og:type" content="website">
+
     <!-- ملفات css -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- Font Awesome Icons File     -->
@@ -17,6 +23,9 @@
 
 </head>
 <body>
+    <div id="loader" >
+        <div class="loader-spinner"></div>
+    </div>
     <div class="container">
         <div class="glass-card">
             <header>
@@ -43,6 +52,10 @@
             
         </div>
     </div>
-    
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("loader").style.display = "none";
+        });
+    </script>
 </body>
 </html>
